@@ -38,19 +38,24 @@ public class BooksApi {
     @RequestMapping(value="/api/books/{id}", method=RequestMethod.PUT)
     public Book update(
 
+
             @PathVariable("id") Long id,
             @RequestParam(value="title") String title,
             @RequestParam(value="description") String description,
             @RequestParam(value="language") String language,
             @RequestParam(value="pages") Integer numberOfPages) {
 
-        Book updatedBook = bookService.findBook(id);
+        Book updatedBook = new Book(title, description,language,numberOfPages);
+        updatedBook.setId(id);
+//        This is how i had it and did not work so well; sad face...
+//        Book updatedBook = bookService.findBook(id);
 
-        // create methods here from Book Class
-            updatedBook.setTitle(title);
-            updatedBook.setDescription (description);
-            updatedBook.setLanguage(language);
-            updatedBook.setNumberOfPages(numberOfPages);
+//         create methods here from Book Class
+//            updatedBook.setTitle(title);
+//            updatedBook.setTitle(title);
+//            updatedBook.setDescription (description);
+//            updatedBook.setLanguage(language);
+//            updatedBook.setNumberOfPages(numberOfPages);
 
         Book book = bookService.updateBook(updatedBook);
         return book;
