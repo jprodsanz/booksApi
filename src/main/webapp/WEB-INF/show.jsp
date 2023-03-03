@@ -18,7 +18,9 @@
 <body>
     <p> <c:out value="${showBook.title}"/> </p>
     <p> <c:out value="${showBook.description}"/> </p>
-    <p> <c:out value="${showBook.language}"/>
-    </p><p> <c:out value="${showBook.numberOfPages}"/> </p>
+    <p> <c:out value="${showBook.language}"/></p>
+    <p> <c:out value="${showBook.numberOfPages}"/> </p>
+    <p> <a href="/books">Home</a> </p>
+
 </body>
 </html>
