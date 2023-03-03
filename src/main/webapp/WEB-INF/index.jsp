@@ -20,7 +20,14 @@
 <div class="card container">
     <h1 class="card-header">Books API</h1>
     <div class="card-body">
-        <h5 class="card-text">Vendor: <c:out value="${Book.title}"/></h5>
+        <c:forEach var="book" items="${allBooks}">
+            <div>
+                <h1>Title: <c:out value="${book.title}"/></h1>
+                <h2>Description: <c:out value="${book.description}"/></h2>
+                <h3>Language: <c:out value="${book.language}"/></h3>
+                <h3>Page Count: <c:out value="${book.numberOfPages}"/></h3>
+            </div>
+        </c:forEach>
     </div>
 </div>
 
